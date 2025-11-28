@@ -1,0 +1,13 @@
+You did such a great job helping Julia with her last coding contest challenge that she wants you to work on this one, too!
+
+The total score of a hacker is the sum of their maximum scores for all of the challenges. Write a query to print the hacker_id, name, and total score of the hackers ordered by the descending score. If more than one hacker achieved the same total score, then sort the result by ascending hacker_id. Exclude all hackers with a total score of  from your result.
+
+/*
+Enter your query here.
+*/
+
+SELECT Submissions.hacker_id, Hackers.name, total_socre
+FROM Hackers
+JOIN Submissions ON Hackers.hacker_id = Submissions.hacker_id
+GROUP BY Submissions.hacker_id
+ORDER BY total_score DESC
